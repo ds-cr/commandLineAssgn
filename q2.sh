@@ -25,6 +25,7 @@ while ! [[ "$val" =~ ^[0-9]+$ ]]; do
     read -p 'Enter a number: ' val
 done
 
+#Print Table
 i=1
 echo -e "\nTable is"
 while (( i <= 10 )); do
