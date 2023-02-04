@@ -4,7 +4,7 @@ I have attached five files for each code. The screenshots have all details for v
 For quick lookup, here are the screenshots. 
 
 ### Q1
-<img src="https://github.com/ds-cr/commandLineAssgn/blob/master/photos/Q1.png" alt="Q1" width = "400">
+<img src="https://github.com/ds-cr/commandLineAssgn/blob/master/photos/Q1.png" alt="Q1" width = "600">
 
 ### Q2
 <img src="https://github.com/ds-cr/commandLineAssgn/blob/master/photos/Q2.png" alt="Q2" width = "400">
