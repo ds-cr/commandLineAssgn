@@ -10,7 +10,7 @@ I have used colors to format the output. The code in each file contains variable
 Colors are basically used to highlight outuput.
 
 ### Important parts of codes
-**`echo -e`** : Allows to use escape characters in echo like - \n (*used for colors*)
+**`echo -e`** : Allows to use escape characters in echo like - \n (*here I have used for colors*)
 
 **Formatting Date** : `%d` - Represents date, `%b` - Month in words (*first three*), `%Y` - Current Year, `%I` - Hour (*in 12 hr format*), `%m` - minutes, `%p` - representing am/pm
 
