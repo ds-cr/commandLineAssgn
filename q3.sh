@@ -11,7 +11,7 @@ read -p "Enter number: " val
 # Get square root of number
 sqrt_val=$(echo "scale=0; sqrt($val)" | bc)
 
-# Check if square root or not
+# Check if prime or not
 i=2
 while (( $i <= $sqrt_val )); do
 
