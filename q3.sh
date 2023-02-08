@@ -5,21 +5,37 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
+function isPrime {
+    i=2
+    flagval=0
+    # Check if value is supplied or not
+    if (($# != 1)); then
+        echo "${RED}Incorrect no. of arguments supplied${NC}"
+    fi
+
+    # Get the square root of number
+    sqrt_val=$(echo "scale=0; sqrt($1)" | bc)
+
+    # Check if prime or not
+    while (( $i <= $sqrt_val )); do
+
+        if (($val % $i == 0)); then
+            flagval=1
+        fi
+        (( ++i ))
+    done
+
+    # Returning value
+    echo $flagval
+}
 
 read -p "Enter number: " val
 
-# Get square root of number
-sqrt_val=$(echo "scale=0; sqrt($val)" | bc)
+# Call function isPrime
+flagval=$(isPrime  ${val})
 
-# Check if prime or not
-i=2
-while (( $i <= $sqrt_val )); do
-
-    if (($val % $i == 0)); then
-        echo -e "Number ${RED}not prime${NC}, divisible by $i, $val / $i = $(( $val/$i ))"
-        exit
-    fi
-    (( ++i ))
-done
-
-echo -e "Number is ${GREEN}prime"
+if (($flagval == 1)); then
+    echo -e "Number ${RED}not prime${NC}"
+else
+    echo -e "Number is ${GREEN}prime"
+fi       
