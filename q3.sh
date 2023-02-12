@@ -3,17 +3,12 @@
 # Some colors for formatting output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+BOLD='\033[1m'
 NC='\033[0m' # No Color
 
 function isPrime {
     i=2
     flagval=0
-
-    # Check if value is supplied or not
-    if (($# != 1)); then
-        echo "${RED}Incorrect no. of arguments supplied${NC}"
-	exit
-    fi
 
     # Get the square root of number
     sqrt_val=$(echo "scale=0; sqrt($1)" | bc)
@@ -33,6 +28,20 @@ function isPrime {
 }
 
 read -p "Enter number: " val
+
+# Check if value is supplied or not
+while [[ -z ${val} ]]; do
+    echo -e "${RED}No arguments supplied${NC}"
+    echo -e "Please ${BOLD}enter${NC} number"
+    read -p "Enter number: " val
+done
+
+# Check if value is number or not
+while ! [[ ${val} =~ [0-9]+ ]]; do
+    echo -e "Value ${RED}not a number${NC}"
+    echo -e "Please enter a ${BOLD}number${NC}"
+    read -p "Enter number: " val
+done
 
 # Call function isPrime
 flagval=$(isPrime  ${val})
