@@ -23,6 +23,7 @@ function isPrime {
 
         if (($val % $i == 0)); then
             flagval=1
+	    break
         fi
         (( ++i ))
     done
